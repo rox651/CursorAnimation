@@ -1,0 +1,151 @@
+*,
+::after,
+::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+@font-face {
+   font-family: "Salter";
+   src: url("../assets/fonts/Salter-Roman.ttf");
+}
+
+@font-face {
+   font-family: "Beba";
+   src: url("./fonts/Beba/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+   font-family: "RF";
+   src: url("./fonts/RF/RFDewi-Bold.ttf");
+   font-weight: 700;
+}
+
+@font-face {
+   font-family: "RF";
+   src: url("./fonts/RF/RFDewi-Black.ttf");
+   font-weight: 800;
+}
+
+:root {
+   --Beba: "Beba";
+   --RF: "RF";
+
+   --green: #44dea7;
+}
+
+img,
+picture,
+svg,
+video {
+   display: block;
+   width: 100%;
+}
+
+input,
+textarea,
+button,
+select {
+   font: inherit;
+}
+.loader {
+   color: #fff;
+}
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+body {
+   overflow-x: hidden;
+   min-height: 100vh;
+   overscroll-behavior: none;
+   background-color: #111822;
+   font-family: var(--RF);
+}
+
+.max-width {
+   width: min(100% - 50px);
+   margin-inline: auto;
+}
+
+.hero-home {
+   height: 100vh;
+   position: relative;
+   overflow: hidden;
+}
+
+.hero-home > div {
+   display: flex;
+   justify-content: space-between;
+   height: 100%;
+}
+.hero-home_img {
+   opacity: 0;
+   width: 400px;
+   position: absolute;
+   z-index: -1;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.hero-home_title {
+   color: var(--green);
+   font-family: var(--Beba);
+   font-size: calc(2vh * 10);
+   display: flex;
+   flex-direction: column;
+   justify-content: end;
+   line-height: calc(1.7vh * 10);
+}
+
+.hero-home_title--split:nth-child(2) {
+   align-self: flex-end;
+}
+.hero-home_title--split {
+   letter-spacing: 0;
+   overflow: hidden;
+   height: max-content;
+}
+.hero-home_info {
+   color: #fff;
+   align-self: flex-end;
+   height: 50%;
+}
+
+.hero-home_info--first {
+   font-size: calc(1vh * 2.2);
+   margin-bottom: 20px;
+   padding-right: 50%;
+}
+.hero-home_info--line {
+   border-bottom: 4px solid #fff;
+   margin-bottom: calc((1vw + 1vh) * 2.3333333333);
+}
+.hero-home_info--second {
+   font-size: calc(1vh * 3);
+   padding-left: 50%;
+}
+.split-span {
+   display: inline-block;
+   transform: translateY(105%);
+}
+.cursor-ctn {
+   position: absolute;
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background-color: #fff;
+
+   /* border: 3px solid ; */
+   transform: translate(-50%, -50%);
+   z-index: 9999;
+   pointer-events: none;
+   transition: transform 0.3s;
+}
+
+.cursor-ctn.media-blend {
+   mix-blend-mode: exclusion;
+}
